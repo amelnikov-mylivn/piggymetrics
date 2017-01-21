@@ -40,6 +40,10 @@ for (int i = 0; i < projects.size(); i++) {
 node {
     sh 'env | sort'
 
+    sh 'whoami'
+
+    sh 'docker images'
+
     ws("${pwd()}/${java.util.UUID.randomUUID()}") {
             stage('Checkout') {
                 checkout scm
