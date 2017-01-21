@@ -13,6 +13,8 @@ def projects = [
 def unitTestsFailed = false
 def componentTestsFailed = false
 
+sh 'env | sort'
+
 def gradleBuilder
 
 for (int i = 0; i < projects.size(); i++) {
