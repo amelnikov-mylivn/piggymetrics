@@ -13,8 +13,6 @@ def projects = [
 def unitTestsFailed = false
 def componentTestsFailed = false
 
-sh 'env | sort'
-
 def gradleBuilder
 
 for (int i = 0; i < projects.size(); i++) {
@@ -40,6 +38,8 @@ for (int i = 0; i < projects.size(); i++) {
 }
 
 node {
+    sh 'env | sort'
+
     ws("${pwd()}/${java.util.UUID.randomUUID()}") {
             stage('Checkout') {
                 checkout scm
